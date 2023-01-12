@@ -14,9 +14,10 @@ body {
     z-index: 9;
     border-radius: 50%;
     
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     color: #F8FBD7;
+    background-color: #344A54;
 
     cursor: pointer;
 }
@@ -29,11 +30,13 @@ body {
     position: relative;
     top: 38px;
     left: 30px;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     color: #F8FBD7;
+    border-radius: 50%;
     cursor: pointer;
     margin-bottom: 60px;
+    background-color: #305050;
 }
 
 #menu {
@@ -73,3 +76,4 @@ body {
     bottom: 50px;
     padding: 50px;
 }
+
