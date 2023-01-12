@@ -18,8 +18,9 @@ var expressions = [
     'Raconter des salades',
     'Se fendre la poire',
     'Vouloir le beurre et l’argent du beurre',
-    'Ne pas mettre tout ces oeufs dans le même panier',
+    'Ne pas mettre tout ses oeufs dans le même panier',
     'On ne fait pas d\'omelette sans casser des oeufs',
+    'Mettre de l\'huile sur le feu',
 
     'Copains comme cochon',
     'Mettre la charrue avant les bœufs',
@@ -27,12 +28,12 @@ var expressions = [
     'Poser un lapin',
     'Faire le coq',
     'Il pleut comme vache qui pisse',
-    'Se coucher avec les poules',
+    'Se coucher à l\'heure les poules',
     'Être muet comme une carpe',
     'Prendre le taureau par les cornes',
     'Avoir une araignée au plafond',
 
-    'Avoir une train de retard',
+    'Avoir un train de retard',
     'Pousser mémé dans les orties',
     'Cherche une aiguille dans une botte de foin',
     'Chercher midi à quatorze heures',
@@ -40,24 +41,28 @@ var expressions = [
 
 ];
 
-var div = document.getElementById('expression');
-div.innerHTML = updateExpression();
 
-document.addEventListener('click', function() {
+/////////////////////////////////////////////////////////////////////
+//                             UPDATE                              //
+/////////////////////////////////////////////////////////////////////
+
+var expressionContainer = document.getElementById('expressionContainer');
+expressionContainer.innerHTML = updateExpression();
+
+expressionContainer.addEventListener('click', function() {
 
     var expression = document.getElementById('expressionText');
-    console.log(expression);
     expression.classList.add('animate__fadeOutRightBig');
     
     expression.addEventListener('animationend', () => {
-        var currentExpression = div.innerHTML;
+        var currentExpression = expressionContainer.innerHTML;
         var newExpression = updateExpression();
     
         while (currentExpression === newExpression) {
             newExpression = updateExpression();
         };
     
-        div.innerHTML = newExpression;
+        expressionContainer.innerHTML = newExpression;
       });
 
 });
@@ -65,6 +70,38 @@ document.addEventListener('click', function() {
 function updateExpression() {
     
     var rand = Math.random() * expressions.length | 0;
-    
     return '<h2 id="expressionText" class="animate__animated animate__fadeInLeftBig animate__faster">' + expressions[rand] + '</h2>';
 };
+
+/////////////////////////////////////////////////////////////////////
+//                             MENU                                //
+/////////////////////////////////////////////////////////////////////
+
+var expressionsList = document.querySelector('#menu');
+
+expressions.forEach(function(expression) {
+    expressionsList.innerHTML += '<h2>' + expression + '</h2>';
+});
+
+
+var openMenuButton = document.querySelector('#openMenuButton');
+
+openMenuButton.addEventListener('click', function() {
+
+    var menu = document.querySelector('#menu');
+
+    menu.style.display = "block";
+    menu.classList.add("animate__slideInLeft");
+    menu.classList.remove("animate__slideOutLeft");
+});
+
+
+var closeMenuButton = document.querySelector('#closeMenuButton');
+
+closeMenuButton.addEventListener('click', function() {
+
+    var menu = document.querySelector('#menu');
+
+    menu.classList.add("animate__slideOutLeft");
+    menu.classList.remove("animate__slideInLeft");
+});
