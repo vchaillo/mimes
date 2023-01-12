@@ -27,13 +27,13 @@ body {
 
 #closeMenuButton {
     position: relative;
-    top: 37px;
-    left: 17px;
+    top: 38px;
+    left: 30px;
     width: 40px;
     height: 40px;
     color: #F8FBD7;
     cursor: pointer;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 #menu {
@@ -43,15 +43,14 @@ body {
     
     width: 100%;
     padding-bottom: 40px;
-    text-align: center;
 
-    background-color: #021919;
+    background-color: #344A54;
     color: #F8FBD7;
 }
 
 #menu h2 {
     margin: 50px;
-    /* font-size: medium; */
+    font-size: 1.2em;
 }
 
 #expressionContainer {
@@ -62,7 +61,7 @@ body {
     width: 100%;
     height: 100%;
 
-    background-color: darkslategray;
+    background-color: #305050;
     color: #F8FBD7;
     
     text-align: center;
