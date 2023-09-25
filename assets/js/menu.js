@@ -31,13 +31,33 @@ closeMenuButton.addEventListener('click', function() {
     menu.classList.remove("animate__slideInLeft");
 });
 
-var expressionListArrow = document.querySelector('#expressionList');
+var expressionContainer = document.querySelector('#expressionContainer');
 
-expressionListArrow.addEventListener('click', function() {
+expressionContainer.addEventListener('click', function() {
 
-    var expressions = document.querySelector('.expressions');
+    var menu = document.querySelector('#menu');
 
-    console.log(expressions);
-    expressions.classList.add("animate__slideOutLeft");
-    // expressions.classList.remove("animate__slideInLeft");
+    menu.classList.add("animate__slideOutLeft");
+    menu.classList.remove("animate__slideInLeft");
 });
+
+document.addEventListener("keyup", function(e) {
+    
+    if (e.key === "Escape") {
+        var menu = document.querySelector('#menu');
+
+        menu.classList.add("animate__slideOutLeft");
+        menu.classList.remove("animate__slideInLeft");
+    }
+});
+
+// var expressionListArrow = document.querySelector('#expressionList');
+
+// expressionListArrow.addEventListener('click', function() {
+
+//     var expressions = document.querySelector('.expressions');
+
+//     console.log(expressions);
+//     expressions.classList.add("animate__slideOutLeft");
+//     // expressions.classList.remove("animate__slideInLeft");
+// });
