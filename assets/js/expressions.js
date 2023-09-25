@@ -22,7 +22,7 @@ var expressions = [
     'On ne fait pas d\'omelette sans casser des oeufs',
     'Mettre de l\'huile sur le feu',
 
-    'Copains comme cochon',
+    'Copains comme cochons',
     'Mettre la charrue avant les bœufs',
     'Ça ne casse pas trois pattes à un canard',
     'Poser un lapin',
@@ -72,22 +72,22 @@ fetch('https://api.notion.com/v1/databases/48e67affd6bb45568f9358efd0abd727/quer
     console.error(error);
 })
 
-fetch('https://swapi.dev/api/people', {
-    method: 'GET',
-    // headers: {
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json',
-    //     'Authorization': 'Bearer secret_6uURx5tlKpgue1jmTpC8JKJN9JW4d9OiAZnQhcKm67B',
-    //     'Notion-Version': '2022-06-28',
-    // },
-    // mode: 'no-cors',
-    // body: JSON.stringify({ "id": 78912 })
-})
-.then(response => response.json())
-.then(response => console.log(JSON.stringify(response)))
-.catch(error => {
-    console.error(error);
-})
+// fetch('https://swapi.dev/api/people', {
+//     method: 'GET',
+//     // headers: {
+//     //     'Accept': 'application/json',
+//     //     'Content-Type': 'application/json',
+//     //     'Authorization': 'Bearer secret_6uURx5tlKpgue1jmTpC8JKJN9JW4d9OiAZnQhcKm67B',
+//     //     'Notion-Version': '2022-06-28',
+//     // },
+//     // mode: 'no-cors',
+//     // body: JSON.stringify({ "id": 78912 })
+// })
+// .then(response => response.json())
+// .then(response => console.log(JSON.stringify(response)))
+// .catch(error => {
+//     console.error(error);
+// })
 
 
 
@@ -121,36 +121,3 @@ function updateExpression() {
     var rand = Math.random() * expressions.length | 0;
     return '<h2 id="expressionText" class="animate__animated animate__fadeInLeftBig animate__faster">' + expressions[rand] + '</h2>';
 };
-
-/////////////////////////////////////////////////////////////////////
-//                             MENU                                //
-/////////////////////////////////////////////////////////////////////
-
-var expressionsList = document.querySelector('#menu');
-
-expressions.forEach(function(expression) {
-    expressionsList.innerHTML += '<h2>' + expression + '</h2>';
-});
-
-
-var openMenuButton = document.querySelector('#openMenuButton');
-
-openMenuButton.addEventListener('click', function() {
-
-    var menu = document.querySelector('#menu');
-
-    menu.style.display = "block";
-    menu.classList.add("animate__slideInLeft");
-    menu.classList.remove("animate__slideOutLeft");
-});
-
-
-var closeMenuButton = document.querySelector('#closeMenuButton');
-
-closeMenuButton.addEventListener('click', function() {
-
-    var menu = document.querySelector('#menu');
-
-    menu.classList.add("animate__slideOutLeft");
-    menu.classList.remove("animate__slideInLeft");
-});

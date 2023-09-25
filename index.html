@@ -8,25 +8,36 @@
     <link rel="icon" type="image/x-icon" href="mime.png">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="expressions.css">
+
+    <link rel="stylesheet" href="assets/css/expressions.css">
+    <link rel="stylesheet" href="assets/css/menu.css">
+    <link rel="stylesheet" href="assets/css/dark_mode.css">
 </head>
 <body>
-    
+        
     <button id="openMenuButton"><i class="fa-sharp fa-solid fa-bars"></i></button>
-
     <div id="menu" class="animate__animated animate__faster">
-        <!-- <div id="closeMenuButton"><i class="fa-sharp fa-solid fa-xmark fa-lg"></i></div> -->
         <button id="closeMenuButton"><i class="fa-sharp fa-solid fa-xmark fa-lg"></i></button>
+        <!-- <h3>Mode jeu</h3> -->
+        <h3 id="expressionList"></i> Liste des expressions</h3>
+        <hr>
     </div>
+
+    <!-- <div id="darkModeToggle"><i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i></div> -->
+    <input type="checkbox" id="darkModeToggle">
+    <label for="darkModeToggle"></label>
 
     <div id="expressionContainer"></div>
 
-    <script type="text/javascript" src="expressions.js"></script>
+
+    <script type="text/javascript" src="assets/js/expressions.js"></script>
+    <script type="text/javascript" src="assets/js/menu.js"></script>
 </body>
 </html>

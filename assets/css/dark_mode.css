@@ -1,0 +1,81 @@
+#darkModeToggle {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: #344A54;
+    color: white;
+}
+
+label {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: yellow;
+    height: 40px;
+    width: 65px;
+    cursor: pointer;
+    display: block;
+    border-radius: 200px;
+    border: 2px solid #344A54;
+    transition: all 0.3s;
+}
+
+label:after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 100px;
+    background-color: #344A54;
+}
+
+input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+input:checked + label {
+    background: #344A54;
+    border: 2px solid yellow;
+}
+
+input:checked + label:after {
+    left: 60px;
+    transform: translateX(-100%);
+    background-color: yellow;
+}
+
+label:active:after {
+    width: 40px;
+    transition: all 0.2s;
+}
+
+/* input:checked + label + #menu {
+    background-color: yellow;
+    transition: 0.3s;
+} */
+
+input:checked + label + #expressionContainer {
+    background-color: #344A54;
+    transition: all 0.3s;
+}
+
+input:checked + label + #expressionText {
+    color: yellow;
+    transition: all 0.3s;
+}
+
+input:checked + #closeMenuButton {
+    background-color: #344A54;
+    color: yellow;
+    transition: 0.3s;
+}
+
+input:checked + #openMenuButton {
+    background-color: yellow;
+    color: #344A54;
+    transition: 0.3s;
+} */
