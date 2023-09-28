@@ -95,15 +95,18 @@ fetch('https://api.notion.com/v1/databases/48e67affd6bb45568f9358efd0abd727/quer
 //                      UPDATE EXPRESSION                          //
 /////////////////////////////////////////////////////////////////////
 
+var menuOpen = null;
 var expressionContainer = document.getElementById('expressionContainer');
 expressionContainer.innerHTML = updateExpression();
 
 expressionContainer.addEventListener('click', function() {
 
-    var expression = document.getElementById('expressionText');
-    expression.classList.add('animate__fadeOutRightBig');
+    if (menuOpen == null || menuOpen == false) {
+
+        var expression = document.getElementById('expressionText');
+        expression.classList.add('animate__fadeOutRightBig');
     
-    expression.addEventListener('animationend', () => {
+        expression.addEventListener('animationend', () => {
         var currentExpression = expressionContainer.innerHTML;
         var newExpression = updateExpression();
     
@@ -113,11 +116,12 @@ expressionContainer.addEventListener('click', function() {
     
         expressionContainer.innerHTML = newExpression;
       });
+    }
 
 });
 
 function updateExpression() {
-    
+
     var rand = Math.random() * expressions.length | 0;
     return '<h2 id="expressionText" class="animate__animated animate__fadeInLeftBig animate__faster">' + expressions[rand] + '</h2>';
 };

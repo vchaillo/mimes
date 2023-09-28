@@ -8,13 +8,13 @@ expressions.forEach(function(expression) {
     expressionsList.innerHTML += '<p class="expressions animate__animated">' + expression + '</p>';
 });
 
-
 var openMenuButton = document.querySelector('#openMenuButton');
 
 openMenuButton.addEventListener('click', function() {
 
     var menu = document.querySelector('#menu');
 
+    menuOpen = true;
     menu.style.display = "block";
     menu.classList.add("animate__slideInLeft");
     menu.classList.remove("animate__slideOutLeft");
@@ -27,6 +27,7 @@ closeMenuButton.addEventListener('click', function() {
 
     var menu = document.querySelector('#menu');
 
+    menuOpen = false;
     menu.classList.add("animate__slideOutLeft");
     menu.classList.remove("animate__slideInLeft");
 });
@@ -37,8 +38,10 @@ expressionContainer.addEventListener('click', function() {
 
     var menu = document.querySelector('#menu');
 
+    menuOpen = false;
     menu.classList.add("animate__slideOutLeft");
     menu.classList.remove("animate__slideInLeft");
+
 });
 
 document.addEventListener("keyup", function(e) {
@@ -46,6 +49,7 @@ document.addEventListener("keyup", function(e) {
     if (e.key === "Escape") {
         var menu = document.querySelector('#menu');
 
+        menuOpen = false;
         menu.classList.add("animate__slideOutLeft");
         menu.classList.remove("animate__slideInLeft");
     }
