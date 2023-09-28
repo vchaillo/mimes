@@ -6,8 +6,7 @@
     height: 44px;
     width: 44px;
     border-radius: 50%;
-    transition: rotate 0.5s ease-in-out, transform 0.15s ease-in-out;
-    transition: all 0.3s;
+    transition: rotate 1s, transform 0.3s;
 }
 
 #openMenuButton {
@@ -29,6 +28,9 @@
 #openMenuButton:hover, #closeMenuButton:hover {
     cursor: pointer;
     transform: scale(1.3);
+}
+
+#closeMenuButton:hover {
     rotate: 360deg;
 }
 
