@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 body {
     font-family: 'Lato', sans-serif;
+    /* font-family: 'Londrina Outline', cursive; */
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -17,20 +17,27 @@ body {
     height: 100%;
 
     background-color: yellow;
+    color: #344A54;
     
     cursor: pointer;
     text-align: center;
     overflow: hidden;
+    transition: all 0.3s;
 }
 
 #expressionText {
     /* background-color: #344A54; */
-    color: yellow;
-    color: #344A54;
-    border-radius: 300px;
+    /* border: 2px solid #344A54; */
+    /* border-radius: 300px; */
     position: relative;
     bottom: 50px;
     padding: 50px;
-    font-size: xx-large;
+    font-size: 5vw;
 }
 
+/* #expressionText:hover {
+    color: #344A54;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px;
+    transform: scale(1.3);
+} */

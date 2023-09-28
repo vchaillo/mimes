@@ -1,23 +1,19 @@
-#darkModeToggle {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    background-color: #344A54;
-    color: white;
-}
-
 label {
     position: absolute;
     right: 20px;
     top: 20px;
-    background-color: yellow;
+    display: block;
     height: 40px;
     width: 65px;
-    cursor: pointer;
-    display: block;
+    background-color: yellow;
     border-radius: 200px;
     border: 2px solid #344A54;
     transition: all 0.3s;
+}
+
+label:hover {
+    cursor: pointer;
+    transform: scale(1.3);
 }
 
 label:after {
@@ -31,18 +27,18 @@ label:after {
     background-color: #344A54;
 }
 
-input {
+#darkModeToggle {
     width: 0;
     height: 0;
     visibility: hidden;
 }
 
-input:checked + label {
+#darkModeToggle:checked + label {
     background: #344A54;
     border: 2px solid yellow;
 }
 
-input:checked + label:after {
+#darkModeToggle:checked + label:after {
     left: 60px;
     transform: translateX(-100%);
     background-color: yellow;
@@ -53,29 +49,17 @@ label:active:after {
     transition: all 0.2s;
 }
 
-/* input:checked + label + #menu {
-    background-color: yellow;
-    transition: 0.3s;
-} */
-
-input:checked + label + #expressionContainer {
-    background-color: #344A54;
-    transition: all 0.3s;
-}
-
-input:checked + label + #expressionText {
-    color: yellow;
-    transition: all 0.3s;
-}
-
-input:checked + #closeMenuButton {
+#darkModeToggle:checked ~ #expressionContainer {
     background-color: #344A54;
     color: yellow;
-    transition: 0.3s;
 }
 
-input:checked + #openMenuButton {
-    background-color: yellow;
-    color: #344A54;
-    transition: 0.3s;
-} */
+#darkModeToggle:checked ~ #openMenuButton {
+    background-color: #344A54;
+    border: 2px solid yellow;
+    color: yellow;
+}
+
+#darkModeToggle:checked ~ #closeMenuButton {
+    background-color: #344A54;
+}

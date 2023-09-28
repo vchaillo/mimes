@@ -7,37 +7,48 @@
     <title>MimXpressions</title>
     <link rel="icon" type="image/x-icon" href="mime.png">
 
+    <!-- Animate CSS (to remove) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
+    <!-- Font font-awesome (replace by svg icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+    <!-- Google fonts (use import instead) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap" rel="stylesheet">
 
-
+    <!-- Custom stylesheets -->
     <link rel="stylesheet" href="assets/css/expressions.css">
     <link rel="stylesheet" href="assets/css/menu.css">
     <link rel="stylesheet" href="assets/css/dark_mode.css">
 </head>
 <body>
-        
+    <!-- Dark mode toggle (keep on top of body) -->
+    <input type="checkbox" id="darkModeToggle">
+    <label for="darkModeToggle"></label>
+    
+    <!-- Menu -->
     <button id="openMenuButton"><i class="fa-sharp fa-solid fa-bars"></i></button>
     <div id="menu" class="animate__animated animate__faster">
         <button id="closeMenuButton"><i class="fa-sharp fa-solid fa-xmark fa-lg"></i></button>
         <!-- <h3>Mode jeu</h3> -->
-        <h3 id="expressionList"></i> Liste des expressions</h3>
+        <h3 id="expressionList">Liste des expressions</h3>
         <hr>
     </div>
 
-    <!-- <div id="darkModeToggle"><i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i></div> -->
-    <input type="checkbox" id="darkModeToggle">
-    <label for="darkModeToggle"></label>
 
-    <div id="expressionContainer"></div>
-
+    <!-- Expression -->
+    <div id="expressionContainer">
+        <h1 id="expressionText" class="animate__animated animate__backInDown">
+            <text x="150" y="125" font-size="60" text-anchor="middle"">MimXpressions</text>
+        </h1>
+    </div>
 
     <script type="text/javascript" src="assets/js/expressions.js"></script>
     <script type="text/javascript" src="assets/js/menu.js"></script>
+    <script type="text/javascript" src="assets/js/notion.js"></script>
 </body>
 </html>
