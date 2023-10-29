@@ -30,7 +30,7 @@ label:after {
 #darkModeToggle {
     width: 0;
     height: 0;
-    visibility: hidden;
+    display: none;
 }
 
 #darkModeToggle:checked + label {
