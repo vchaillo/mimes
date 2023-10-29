@@ -37,16 +37,9 @@
 
 #menuContainer {
     display: none;
-    /* display: flex; */
     flex-direction: column;
     justify-content: center;
-    position: absolute;
     z-index: 100;
-    
-    width: 100%;
-    /* overflow-y: scroll; */
-    height: 100%;
-    
     background-color: #344A54;
     color: white;
 }

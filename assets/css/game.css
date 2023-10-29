@@ -1,22 +1,12 @@
 #gameModeContainer {
     display: none;
-    position: absolute;
-    top: 0;
-    z-index: 42;
-
-    width: 100%;
-    height: 100%;
-    
     background-color: #344A54;
     color: white;
     z-index: 3;
 }
 
 #gameSettings {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
-    color: yellow;
+    /* color: yellow; */
     padding: 70px 40px;
 }
 
