@@ -13,16 +13,17 @@
     background-color: yellow;
     color: #344A54;
     border: 2px solid #344A54;
+    z-index: 99;
 }
 #openMenuButton i {
-    line-height: 2;
+    /* line-height: 2; */
 }
 
 #closeMenuButton {
     background-color: #344A54;
     color: yellow;
     border: 2px solid yellow;
-    z-index: 44;
+    z-index: 101;
 }
 
 #openMenuButton:hover, #closeMenuButton:hover {
@@ -34,17 +35,34 @@
     rotate: 360deg;
 }
 
-#menu {
+#menuContainer {
     display: none;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
     position: absolute;
-    z-index: 42;
-    padding: 70px 40px;
-    padding-bottom: 200px;;
+    z-index: 100;
     
-    max-width: 100%;
-    overflow-y: scroll;
+    width: 100%;
+    /* overflow-y: scroll; */
     height: 100%;
-
+    
     background-color: #344A54;
     color: white;
+}
+
+#menu {
+    padding: 70px 40px;
+}
+
+#menu a {
+    color: yellow;
+    text-decoration: none;
+    font-size: 5vw;
+    display: block;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+#menu a:hover {
+    transform: translateX(20px);
 }

@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/css/expressions.css">
     <link rel="stylesheet" href="assets/css/menu.css">
     <link rel="stylesheet" href="assets/css/dark_mode.css">
+    <link rel="stylesheet" href="assets/css/game.css">
 </head>
 <body>
     <!-- Dark mode toggle (keep on top of body) -->
@@ -34,23 +35,48 @@
     
     <!-- Menu -->
     <button id="openMenuButton"><i class="fa-sharp fa-solid fa-bars"></i></button>
-    <div id="menu" class="animate__animated animate__faster">
-        <button id="closeMenuButton"><i class="fa-sharp fa-solid fa-xmark fa-lg"></i></button>
-        <!-- <h3>Mode jeu</h3> -->
-        <h3 id="expressionList">Liste des expressions</h3>
-        <hr>
+    <div id="menuContainer" class="animate__animated animate__faster">
+        <div id="menu">
+            <button id="closeMenuButton"><i class="fa-sharp fa-solid fa-xmark fa-lg"></i></button>
+            <!-- <h3>Mode jeu</h3> -->
+            <a id="gameMode" href="#">Game mode</a>
+            <a id="expressionList" href="#">Liste des expressions</a>
+        </div>
     </div>
 
 
     <!-- Expression -->
     <div id="expressionContainer">
         <h1 id="expressionText" class="animate__animated animate__backInDown">
-            <text x="150" y="125" font-size="60" text-anchor="middle"">MimXpressions</text>
+            <text x="150" y="125" font-size="60" text-anchor="middle">MimXpressions</text>
         </h1>
+    </div>
+
+    <div id="gameModeContainer">
+        <div id="gameSettings">
+            <h1>Paramètres nouvelle partie</h1>
+            <h4>Nombre de points</h4>
+            <button>-</button><span id="nbPoints">5</span><button>+</button>
+            <h4>Nom de joueurs</h4>
+            <input class="players" type="text" name="player1" placeholder="Joueur 1" value="J1"></input>
+            <input class="players" type="text" name="player2" placeholder="Joueur 2" value="J2"></input>
+            <button>+</button>
+            <br>
+            <br>
+            <button id="startButton">Démarrer</button>
+        </div>
+        <div id="gameWindow">
+            <div id="timer"></div>
+            <div id="gameExpressionContainer"></div>
+            <div id="currentPlayer"></div>
+            <div id="playersContainer"></div>
+        </div>
+
     </div>
 
     <script type="text/javascript" src="assets/js/expressions.js"></script>
     <script type="text/javascript" src="assets/js/menu.js"></script>
+    <script type="text/javascript" src="assets/js/game.js"></script>
     <script type="text/javascript" src="assets/js/notion.js"></script>
 </body>
 </html>

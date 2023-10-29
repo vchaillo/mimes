@@ -2,20 +2,28 @@
 //                             MENU                                //
 /////////////////////////////////////////////////////////////////////
 
-var expressionsList = document.querySelector('#menu');
+function closeMenu() {
+    var menu = document.querySelector('#menuContainer');
 
-expressions.forEach(function(expression) {
-    expressionsList.innerHTML += '<p class="expressions animate__animated">' + expression + '</p>';
-});
+    menuOpen = false;
+    menu.classList.add("animate__slideOutLeft");
+    menu.classList.remove("animate__slideInLeft");
+}
+
+var expressionsList = document.querySelector('#menuContainer');
+
+// expressions.forEach(function(expression) {
+//     expressionsList.innerHTML += '<p class="expressions animate__animated">' + expression + '</p>';
+// });
 
 var openMenuButton = document.querySelector('#openMenuButton');
 
 openMenuButton.addEventListener('click', function() {
 
-    var menu = document.querySelector('#menu');
+    var menu = document.querySelector('#menuContainer');
 
     menuOpen = true;
-    menu.style.display = "block";
+    menu.style.display = "flex";
     menu.classList.add("animate__slideInLeft");
     menu.classList.remove("animate__slideOutLeft");
 });
@@ -23,37 +31,18 @@ openMenuButton.addEventListener('click', function() {
 
 var closeMenuButton = document.querySelector('#closeMenuButton');
 
-closeMenuButton.addEventListener('click', function() {
+closeMenuButton.addEventListener('click', closeMenu);
 
-    var menu = document.querySelector('#menu');
-
-    menuOpen = false;
-    menu.classList.add("animate__slideOutLeft");
-    menu.classList.remove("animate__slideInLeft");
-});
-
-var expressionContainer = document.querySelector('#expressionContainer');
-
-expressionContainer.addEventListener('click', function() {
-
-    var menu = document.querySelector('#menu');
-
-    menuOpen = false;
-    menu.classList.add("animate__slideOutLeft");
-    menu.classList.remove("animate__slideInLeft");
-
-});
+// var expressionContainer = document.querySelector('#expressionContainer');
+// expressionContainer.addEventListener('click', closeMenu());
 
 document.addEventListener("keyup", function(e) {
     
     if (e.key === "Escape") {
-        var menu = document.querySelector('#menu');
-
-        menuOpen = false;
-        menu.classList.add("animate__slideOutLeft");
-        menu.classList.remove("animate__slideInLeft");
+        closeMenu();
     }
 });
+
 
 // var expressionListArrow = document.querySelector('#expressionList');
 
