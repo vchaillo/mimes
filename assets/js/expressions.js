@@ -45,7 +45,6 @@ var expressions = [
 //                      UPDATE EXPRESSION                          //
 /////////////////////////////////////////////////////////////////////
 
-var menuOpen = null;
 var expressionContainer = document.getElementById('expressionContainer');
 
 // Init first expression
@@ -53,22 +52,19 @@ var expressionContainer = document.getElementById('expressionContainer');
 
 expressionContainer.addEventListener('click', function() {
 
-    if (menuOpen == null || menuOpen == false) {
+    var expression = document.getElementById('expressionText');
+    expression.classList.add('animate__fadeOutRightBig');
 
-        var expression = document.getElementById('expressionText');
-        expression.classList.add('animate__fadeOutRightBig');
+    expression.addEventListener('animationend', () => {
+        var currentExpression = expressionContainer.innerHTML;
+        var newExpression = updateExpression();
     
-        expression.addEventListener('animationend', () => {
-            var currentExpression = expressionContainer.innerHTML;
-            var newExpression = updateExpression();
-        
-            while (currentExpression === newExpression) {
-                newExpression = updateExpression();
-            };
-        
-            expressionContainer.innerHTML = newExpression;
-        });
-    }   
+        while (currentExpression === newExpression) {
+            newExpression = updateExpression();
+        };
+    
+        expressionContainer.innerHTML = newExpression;
+    });
 });
 
 function updateExpression() {

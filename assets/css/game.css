@@ -1,21 +1,19 @@
 #gameModeContainer {
     /* display: none; */
+    display: flex;
+    justify-content: center;
     background-color: yellow;
     color: #344A54;
     z-index: 3;
 }
 
 #gameSettings {
+    text-align: center;
     padding: 70px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
-#gameSettings input[type=text] {
-    background-color: transparent;
-    color: #344A54;
-    border: 2px solid #344A54;
-    padding: 10px;
+
+#gameSettings #nbPoints {
+    font-size: 6vh;
 }
 
 #gameWindow {
@@ -28,11 +26,19 @@
 }
 
 #playersContainer {
-    color: grey;
+    /* background-color: #344A54; */
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    /* color: yellow; */
 }
 
 #currentPlayer {
     /* color: yellow; */
+    text-align: center;
+}
+
+.player {
+    font-weight: bold;
+    text-align: center;
+    margin: 20px;
 }

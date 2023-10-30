@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap" rel="stylesheet">
 
     <!-- Custom stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/expressions.css">
     <link rel="stylesheet" href="assets/css/menu.css">
     <link rel="stylesheet" href="assets/css/dark_mode.css">
@@ -34,13 +35,14 @@
     </label>
     
     <!-- Menu -->
-    <button id="openMenuButton"><i class="fa-sharp fa-solid fa-bars"></i></button>
+    <button id="openMenuButton" class="circleButton"><i class="fa-sharp fa-solid fa-bars"></i></button>
     <div id="menuContainer" class="container animate__animated animate__faster">
         <div id="menu">
-            <button id="closeMenuButton"><i class="fa-sharp fa-solid fa-xmark fa-lg"></i></button>
+            <button id="closeMenuButton" class="circleButton"><i class="fa-sharp fa-solid fa-xmark fa-lg"></i></button>
             <!-- <h3>Mode jeu</h3> -->
-            <a id="gameMode" href="#">Game mode</a>
-            <a id="expressionList" href="#">Liste des expressions</a>
+            <h2><a id="freeMode" href="#">Mode libre</a></h2>
+            <h2><a id="gameMode" href="#">Mode jeu</a></h2>
+            <h2><a id="expressionList" href="#">Liste des expressions</a></h2>
         </div>
     </div>
 
@@ -48,23 +50,30 @@
     <!-- Expression -->
     <div id="expressionContainer" class="container">
         <h1 id="expressionText" class="animate__animated animate__backInDown">
-            <text x="150" y="125" font-size="60" text-anchor="middle">MimXpressions</text>
+            <text>MimXpressions</text>
         </h1>
     </div>
 
     <div id="gameModeContainer" class="container animate__animated animate__faster">
         <div id="gameSettings">
             <h1>Paramètres nouvelle partie</h1>
-            <h4>Nombre de points</h4>
+            <h3>Nombre de points</h3>
             <div>
-                <button>-</button><span id="nbPoints">5</span><button>+</button>
+                <button id="minusPointsButton" class="circleButton">-</button>
+                <input id="nbPoints" type="number" value="5">
+                <button id="plusPointsButton" class="circleButton">+</button>
             </div>
-            <h4>Nom de joueurs</h4>
-            <div>
-                <input class="players" type="text" name="player1" placeholder="Joueur 1" value="J1"></input>
-                <input class="players" type="text" name="player2" placeholder="Joueur 2" value="J2"></input>
-                <button>+</button>
+            
+            <h3>Noms des joueurs</h3>
+            <div id="playersForm">
+                <input class="playerInput" type="text" name="player1" placeholder="Joueur 1" value="Valentin"></input>
+                <input class="playerInput" type="text" name="player2" placeholder="Joueur 2" value="Roberta"></input>
+                <input class="playerInput" type="text" name="player3" placeholder="Joueur 3" value="Paul"></input>
+                <input class="playerInput" type="text" name="player4" placeholder="Joueur 4" value="Jacques"></input>
             </div>
+            <br><br><br>
+            <button id="addPlayerButton" class="circleButton">+</button>
+            <br><br><br>
             <button id="startButton">Démarrer</button>
         </div>
         <div id="gameWindow">
@@ -79,6 +88,7 @@
     <script type="text/javascript" src="assets/js/expressions.js"></script>
     <script type="text/javascript" src="assets/js/menu.js"></script>
     <script type="text/javascript" src="assets/js/game.js"></script>
+    <script type="text/javascript" src="assets/js/settings.js"></script>
     <script type="text/javascript" src="assets/js/notion.js"></script>
 </body>
 </html>

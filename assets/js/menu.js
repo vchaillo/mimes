@@ -5,36 +5,23 @@
 function closeMenu() {
     var menu = document.querySelector('#menuContainer');
 
-    menuOpen = false;
-    menu.classList.add("animate__slideOutLeft");
-    menu.classList.remove("animate__slideInLeft");
+    menuContainer.classList.add("animate__slideOutLeft");
+    menuContainer.classList.remove("animate__slideInLeft");
 }
 
-var expressionsList = document.querySelector('#menuContainer');
-
-// expressions.forEach(function(expression) {
-//     expressionsList.innerHTML += '<p class="expressions animate__animated">' + expression + '</p>';
-// });
-
 var openMenuButton = document.querySelector('#openMenuButton');
-
 openMenuButton.addEventListener('click', function() {
 
-    var menu = document.querySelector('#menuContainer');
+    var menuContainer = document.querySelector('#menuContainer');
 
-    menuOpen = true;
-    menu.style.display = "flex";
-    menu.classList.add("animate__slideInLeft");
-    menu.classList.remove("animate__slideOutLeft");
+    menuContainer.style.display = "flex";
+    menuContainer.classList.add("animate__slideInLeft");
+    menuContainer.classList.remove("animate__slideOutLeft");
 });
 
 
 var closeMenuButton = document.querySelector('#closeMenuButton');
-
 closeMenuButton.addEventListener('click', closeMenu);
-
-// var expressionContainer = document.querySelector('#expressionContainer');
-// expressionContainer.addEventListener('click', closeMenu());
 
 document.addEventListener("keyup", function(e) {
     
@@ -43,14 +30,28 @@ document.addEventListener("keyup", function(e) {
     }
 });
 
+var gameMode = document.getElementById('gameMode');
+var gameWindow = document.getElementById('gameWindow');
+var gameSettings = document.getElementById('gameSettings');
+gameMode.addEventListener('click', function() {
 
-// var expressionListArrow = document.querySelector('#expressionList');
+    var gameModeContainer = document.getElementById('gameModeContainer');
+    
+    gameModeContainer.style.display = "flex";
+    gameWindow.style.display = "none";
+    gameSettings.style.display = "block";
+    gameModeContainer.classList.add("animate__slideInRight");
+    gameModeContainer.classList.remove("animate__slideOutRight");
+    closeMenu();
+});
 
-// expressionListArrow.addEventListener('click', function() {
+var freeMode = document.getElementById('freeMode');
+freeMode.addEventListener('click', function() {
 
-//     var expressions = document.querySelector('.expressions');
-
-//     console.log(expressions);
-//     expressions.classList.add("animate__slideOutLeft");
-//     // expressions.classList.remove("animate__slideInLeft");
-// });
+    var gameModeContainer = document.getElementById('gameModeContainer');
+    
+    gameModeContainer.style.display = "none";
+    gameWindow.style.display = "none";
+    gameSettings.style.display = "none";
+    closeMenu();
+});

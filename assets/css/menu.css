@@ -29,9 +29,6 @@
     top: 20px;
     left: 20px;
     display: block;
-    height: 44px;
-    width: 44px;
-    border-radius: 50%;
     transition: rotate 1s, transform 0.3s;
 }
 
@@ -40,9 +37,6 @@
     color: #344A54;
     border: 2px solid #344A54;
     z-index: 99;
-}
-#openMenuButton i {
-    /* line-height: 2; */
 }
 
 #closeMenuButton {
