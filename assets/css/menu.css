@@ -1,3 +1,29 @@
+#menuContainer {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 100;
+    background-color: #344A54;
+    color: white;
+}
+
+#menu {
+    padding: 70px 30px;
+}
+
+#menu a {
+    color: yellow;
+    text-decoration: none;
+    margin: 40px 0;
+    font-size: 5vh;
+    display: block;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+#menu a:hover {
+    transform: translateX(20px);
+}
+
 #openMenuButton, #closeMenuButton {
     position: absolute;
     top: 20px;
@@ -33,29 +59,4 @@
 
 #closeMenuButton:hover {
     rotate: 360deg;
-}
-
-#menuContainer {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 100;
-    background-color: #344A54;
-    color: white;
-}
-
-#menu {
-    padding: 70px 40px;
-}
-
-#menu a {
-    color: yellow;
-    text-decoration: none;
-    font-size: 5vw;
-    display: block;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-}
-#menu a:hover {
-    transform: translateX(20px);
 }

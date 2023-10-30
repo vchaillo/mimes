@@ -1,13 +1,21 @@
 #gameModeContainer {
-    display: none;
-    background-color: #344A54;
-    color: white;
+    /* display: none; */
+    background-color: yellow;
+    color: #344A54;
     z-index: 3;
 }
 
 #gameSettings {
-    /* color: yellow; */
     padding: 70px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#gameSettings input[type=text] {
+    background-color: transparent;
+    color: #344A54;
+    border: 2px solid #344A54;
+    padding: 10px;
 }
 
 #gameWindow {
@@ -15,7 +23,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    color: yellow;
+    /* color: yellow; */
     padding: 70px 40px;
 }
 
@@ -26,5 +34,5 @@
 }
 
 #currentPlayer {
-    color: yellow;
+    /* color: yellow; */
 }

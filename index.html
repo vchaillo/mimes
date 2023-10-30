@@ -46,23 +46,25 @@
 
 
     <!-- Expression -->
-    <div id="expressionContainer">
+    <div id="expressionContainer" class="container">
         <h1 id="expressionText" class="animate__animated animate__backInDown">
             <text x="150" y="125" font-size="60" text-anchor="middle">MimXpressions</text>
         </h1>
     </div>
 
-    <div id="gameModeContainer" class="container">
+    <div id="gameModeContainer" class="container animate__animated animate__faster">
         <div id="gameSettings">
             <h1>Paramètres nouvelle partie</h1>
             <h4>Nombre de points</h4>
-            <button>-</button><span id="nbPoints">5</span><button>+</button>
+            <div>
+                <button>-</button><span id="nbPoints">5</span><button>+</button>
+            </div>
             <h4>Nom de joueurs</h4>
-            <input class="players" type="text" name="player1" placeholder="Joueur 1" value="J1"></input>
-            <input class="players" type="text" name="player2" placeholder="Joueur 2" value="J2"></input>
-            <button>+</button>
-            <br>
-            <br>
+            <div>
+                <input class="players" type="text" name="player1" placeholder="Joueur 1" value="J1"></input>
+                <input class="players" type="text" name="player2" placeholder="Joueur 2" value="J2"></input>
+                <button>+</button>
+            </div>
             <button id="startButton">Démarrer</button>
         </div>
         <div id="gameWindow">

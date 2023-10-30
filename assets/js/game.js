@@ -11,7 +11,9 @@ gameMode.addEventListener('click', function() {
     
     gameModeContainer.style.display = "flex";
     gameWindow.style.display = "none";
-    gameSettings.style.display = "block";
+    gameSettings.style.display = "flex";
+    gameModeContainer.classList.add("animate__slideInRight");
+    gameModeContainer.classList.remove("animate__slideOutRight");
     closeMenu();
 });
 
