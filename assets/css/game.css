@@ -1,7 +1,7 @@
 #gameModeContainer {
     /* display: none; */
-    display: flex;
-    justify-content: center;
+    display: block;
+
     background-color: yellow;
     color: #344A54;
     z-index: 3;

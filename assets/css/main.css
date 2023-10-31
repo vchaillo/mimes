@@ -57,7 +57,9 @@ input {
 
 input[type=number] {
     font-size: 6vh;
-    width: fit-content;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
 }
 
 input[type=text] {
