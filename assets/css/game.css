@@ -1,6 +1,6 @@
 #gameModeContainer {
-    /* display: none; */
-    display: block;
+    display: none;
+    /* display: block; */
 
     background-color: yellow;
     color: #344A54;
