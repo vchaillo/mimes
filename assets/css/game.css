@@ -41,4 +41,10 @@
     font-weight: bold;
     text-align: center;
     margin: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.player:hover {
+    transform: translateY(-20px);
+    /* transform: scale(1.2); */
 }

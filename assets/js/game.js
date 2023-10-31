@@ -11,8 +11,9 @@ startButton.addEventListener('click', function() {
     gameWindow.style.display = "flex";
     gameSettings.style.display = "none";
 
-    initGame();
-    startGame();
+    // Init Game's variables with players, points and time
+    // initGame();
+    // startGame();
 
     // Choisir une expression random
     var random = Math.random() * expressions.length | 0;
@@ -36,15 +37,15 @@ startButton.addEventListener('click', function() {
     var playersHtml = '';
     for (player of playersInputs) {
         if (player != currentPlayer) {
-            playersHtml += '<div class="player" name="' + player.value + '" score="0">' + player.value + '<br>0 /' + nbPoints.value + '</div>';
+            playersHtml += '<div class="player" id="' + player.name + '" name="' + player.value + '" score="0">' + player.value + '<br>0 /' + nbPoints.value + '</div>';
         }
     }
     playersContainer.innerHTML = playersHtml;
 
-    startGame();
+    startGame(nbPoints.value);
 });
 
-function startGame() {
+function startGame(nbPoints) {
 
     var playersHtml = document.getElementsByClassName('player');
 
@@ -55,10 +56,14 @@ function startGame() {
 
             // Augmenter le score du joueur
             playerHtml.setAttribute('score', parseInt(playerHtml.getAttribute('score')) + 1);
-            playerHtml.innerHTML
+            var playerDiv = document.getElementById(playerHtml.id);
+            playerDiv.innerHTML = playerHtml.getAttribute('name') + '<br>' + playerHtml.getAttribute('score') +' /' + nbPoints;
 
-            console.log(playerHtml);
-            console.log(playerHtml.getAttribute('name') + ' - Score : ' + playerHtml.getAttribute('score'));
+            // Vérifier si le score maximal est attein par le joueur
+            if (playerHtml.getAttribute('score') == nbPoints) {
+                alert(playerHtml.getAttribute('name') + " a remporté la partie !");
+            }
+
             // Afficher le nom du joueur comme currentJoueur
             // Afficher une nouvelle expression
         });
