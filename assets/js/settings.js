@@ -14,7 +14,7 @@ plusPointsButton.addEventListener('click', function() {
 
 var addPlayerButton = document.getElementById('addPlayerButton');
 
-var nbPlayers = 4;
+var nbPlayers = 2;
 addPlayerButton.addEventListener('click', function() {
     
     var players = document.getElementsByClassName('playerInput');
@@ -22,14 +22,12 @@ addPlayerButton.addEventListener('click', function() {
 
     var playersFormHtml = '';
     for (player of players) {
-        playersFormHtml += '<input class="player" type="text" name="' + player.name + '" placeholder="' + player.placeholder + '" value="' + player.value + '"></input>';
+        playersFormHtml += '<input class="playerInput" type="text" name="' + player.name + '" placeholder="' + player.placeholder + '" value="' + player.value + '"></input>';
     }
 
     nbPlayers++;
-    playersFormHtml += '<input class="player" type="text" name="player' + nbPlayers + '" placeholder="Joueur ' + nbPlayers + '"></input>';
+    playersFormHtml += '<input class="playerInput" type="text" name="player' + nbPlayers + '" placeholder="Joueur ' + nbPlayers + '"></input>';
     
-    console.log(playersFormHtml);
-
     playersForm.innerHTML = playersFormHtml;
-    console.log(playersForm);
+    // console.log(playersForm);
 });
