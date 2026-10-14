@@ -1,10 +1,11 @@
-<html lang="en">
+<!doctype html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     
-    <title>MimXpressions</title>
+    <title>MimXpression</title>
     <link rel="icon" type="image/x-icon" href="mime.png">
 
     <!-- Animate CSS (to remove) -->
@@ -26,6 +27,7 @@
     <link rel="stylesheet" href="assets/css/menu.css">
     <link rel="stylesheet" href="assets/css/dark_mode.css">
     <link rel="stylesheet" href="assets/css/game.css">
+    <link rel="stylesheet" href="assets/css/library.css">
 </head>
 <body>
     <!-- Dark mode toggle (keep on top of body) -->
@@ -43,6 +45,7 @@
             <h2><a id="freeMode" href="#">Mode libre</a></h2>
             <h2><a id="gameMode" href="#">Mode jeu</a></h2>
             <h2><a id="expressionList" href="#">Liste des expressions</a></h2>
+            <div class="account"><button id="authButton" class="circleButton" aria-label="Se connecter avec Google" title="Se connecter avec Google"><i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i></button><span id="accountStatus"></span></div>
         </div>
     </div>
 
@@ -50,7 +53,7 @@
     <!-- Expression -->
     <div id="expressionContainer" class="container">
         <h1 id="expressionText" class="animate__animated animate__backInDown">
-            <text>MimXpressions</text>
+            <text>MimXpression</text>
         </h1>
     </div>
 
@@ -85,10 +88,24 @@
 
     </div>
 
+    <section id="libraryContainer" class="container" aria-labelledby="libraryTitle" hidden>
+        <div class="libraryContent">
+            <h1 id="libraryTitle">Les expressions</h1>
+            <p id="dataStatus" role="status"></p>
+            <input id="expressionSearch" type="search" placeholder="Rechercher une expression…" aria-label="Rechercher une expression">
+            <div id="editorControls" hidden>
+                <form id="expressionForm"><input id="expressionInput" type="text" maxlength="200" required placeholder="Nouvelle expression" aria-label="Texte de l’expression"><button id="saveExpression" type="submit">Ajouter</button><button id="cancelEdit" type="button" hidden>Annuler</button></form>
+                <button id="importExpressions" type="button">Importer les 34 expressions d’origine</button>
+            </div>
+            <p id="libraryMessage" role="status" aria-live="polite"></p>
+            <p id="expressionCount"></p>
+            <ul id="expressionItems"></ul>
+        </div>
+    </section>
     <script type="text/javascript" src="assets/js/expressions.js"></script>
     <script type="text/javascript" src="assets/js/menu.js"></script>
     <script type="text/javascript" src="assets/js/game.js"></script>
     <script type="text/javascript" src="assets/js/settings.js"></script>
-    <script type="text/javascript" src="assets/js/notion.js"></script>
+    <script type="module" src="assets/js/library.js"></script>
 </body>
 </html>

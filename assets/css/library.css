@@ -1,0 +1,22 @@
+[hidden] { display: none !important; }
+#libraryContainer { z-index: 4; background: yellow; color: #344A54; overflow-y: auto; display: block; }
+.libraryContent { max-width: 880px; margin: auto; padding: 90px 24px 40px; }
+.libraryContent h1 { font-size: clamp(28px, 5vw, 48px); }
+.libraryContent input { box-sizing: border-box; color: inherit; border: 2px solid currentColor; border-radius: 22px; padding: 12px 16px; font-size: 16px; }
+#expressionSearch { width: 100%; margin-bottom: 20px; background: transparent; }
+#expressionForm { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+#expressionInput { flex: 1; min-width: 180px; }
+.libraryContent button { font-size: 16px; line-height: 1.4; }
+.libraryContent button:hover { transform: translateY(-2px); }
+#expressionItems { list-style: none; padding: 0; }
+.expressionRow { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0; border-bottom: 1px solid currentColor; }
+.expressionRow span { overflow-wrap: anywhere; }
+.expressionActions { display: flex; gap: 8px; flex-shrink: 0; }
+.expressionRow.isHidden > span { opacity: .55; }
+.account { display: flex; align-items: center; gap: 12px; color: yellow; }
+.account button { color: yellow; background: transparent; border-color: yellow; }
+#accountStatus { font-size: 14px; }
+#darkModeToggle:checked ~ #libraryContainer button { color: yellow; background: #344A54; border-color: yellow; }
+button:disabled { cursor: wait; opacity: .5; transform: none; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+@media(max-width: 520px) { .expressionRow { align-items: flex-start; flex-direction: column; } #menu a { font-size: 32px; } }

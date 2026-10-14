@@ -33,7 +33,9 @@ document.addEventListener("keyup", function(e) {
 var gameMode = document.getElementById('gameMode');
 var gameWindow = document.getElementById('gameWindow');
 var gameSettings = document.getElementById('gameSettings');
-gameMode.addEventListener('click', function() {
+gameMode.addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('libraryContainer').hidden = true;
 
     var gameModeContainer = document.getElementById('gameModeContainer');
     
@@ -46,7 +48,9 @@ gameMode.addEventListener('click', function() {
 });
 
 var freeMode = document.getElementById('freeMode');
-freeMode.addEventListener('click', function() {
+freeMode.addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('libraryContainer').hidden = true;
 
     var gameModeContainer = document.getElementById('gameModeContainer');
     
