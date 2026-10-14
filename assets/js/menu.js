@@ -3,7 +3,7 @@
 /////////////////////////////////////////////////////////////////////
 
 function closeMenu() {
-    var menu = document.querySelector('#menuContainer');
+    var menuContainer = document.querySelector('#menuContainer');
 
     menuContainer.classList.add("animate__slideOutLeft");
     menuContainer.classList.remove("animate__slideInLeft");
@@ -58,4 +58,9 @@ freeMode.addEventListener('click', function(event) {
     gameWindow.style.display = "none";
     gameSettings.style.display = "none";
     closeMenu();
+});
+// Remove the closed overlay after its existing slide animation finishes.
+document.getElementById('menuContainer').addEventListener('animationend', function(event) {
+    if (event.target !== this) return;
+    if (this.classList.contains('animate__slideOutLeft')) this.style.display = 'none';
 });

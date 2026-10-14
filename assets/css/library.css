@@ -15,8 +15,23 @@
 .expressionRow.isHidden > span { opacity: .55; }
 .account { display: flex; align-items: center; gap: 12px; color: yellow; }
 .account button { color: yellow; background: transparent; border-color: yellow; }
-#accountStatus { font-size: 14px; }
 #darkModeToggle:checked ~ #libraryContainer button { color: yellow; background: #344A54; border-color: yellow; }
 button:disabled { cursor: wait; opacity: .5; transform: none; }
 button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
 @media(max-width: 520px) { .expressionRow { align-items: flex-start; flex-direction: column; } #menu a { font-size: 32px; } }
+/* Center all round icons independently of font glyph metrics. */
+.circleButton, #openMenuButton, #closeMenuButton, #authButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    line-height: 1;
+}
+.circleButton i { display: block; font-size: 18px; line-height: 1; }
+.account { position: absolute; top: 20px; right: 20px; }
+#authButton { background: transparent; border-color: yellow; color: yellow; }
+button:disabled { cursor: default; }

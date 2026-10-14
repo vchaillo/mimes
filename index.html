@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>MimXpression</title>
     <link rel="icon" type="image/x-icon" href="mime.png">
@@ -32,20 +32,20 @@
 <body>
     <!-- Dark mode toggle (keep on top of body) -->
     <input type="checkbox" id="darkModeToggle">
-    <label for="darkModeToggle">
+    <label for="darkModeToggle" aria-label="Changer de thème">
         <!-- <i class="fa-solid fa-palette"></i> -->
     </label>
     
     <!-- Menu -->
-    <button id="openMenuButton" class="circleButton"><i class="fa-sharp fa-solid fa-bars"></i></button>
+    <button id="openMenuButton" class="circleButton" aria-label="Ouvrir le menu"><i class="fa-sharp fa-solid fa-bars"></i></button>
     <div id="menuContainer" class="container animate__animated animate__faster">
         <div id="menu">
-            <button id="closeMenuButton" class="circleButton"><i class="fa-sharp fa-solid fa-xmark fa-lg"></i></button>
+            <button id="closeMenuButton" class="circleButton" aria-label="Fermer le menu"><i class="fa-sharp fa-solid fa-xmark fa-lg"></i></button>
             <!-- <h3>Mode jeu</h3> -->
             <h2><a id="freeMode" href="#">Mode libre</a></h2>
             <h2><a id="gameMode" href="#">Mode jeu</a></h2>
             <h2><a id="expressionList" href="#">Liste des expressions</a></h2>
-            <div class="account"><button id="authButton" class="circleButton" aria-label="Se connecter avec Google" title="Se connecter avec Google"><i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i></button><span id="accountStatus"></span></div>
+            <div class="account"><button id="authButton" class="circleButton" aria-label="Se connecter avec Google" title="Se connecter avec Google"><i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i></button></div>
         </div>
     </div>
 
@@ -59,33 +59,34 @@
 
     <div id="gameModeContainer" class="container animate__animated animate__faster">
         <div id="gameSettings">
-            <h1>Paramètres nouvelle partie</h1>
-            <h3>Nombre de points</h3>
-            <div>
-                <button id="minusPointsButton" class="circleButton">-</button>
-                <input id="nbPoints" type="number" value="5">
-                <button id="plusPointsButton" class="circleButton">+</button>
-            </div>
-            
-            <h3>Noms des joueurs</h3>
-            <div id="playersForm">
-                <input class="playerInput" type="text" name="player1" placeholder="Joueur 1" value="Valentin"></input>
-                <input class="playerInput" type="text" name="player2" placeholder="Joueur 2" value="Roberta"></input>
-                <!-- <input class="playerInput" type="text" name="player3" placeholder="Joueur 3" value="Paul"></input>
-                <input class="playerInput" type="text" name="player4" placeholder="Joueur 4" value="Jacques"></input> -->
-            </div>
-            <br>
-            <button id="addPlayerButton" class="circleButton">+</button>
-            <br><br><br>
-            <button id="startButton">Démarrer</button>
+            <p class="gameEyebrow">MODE JEU</p>
+            <h1>Nouvelle partie</h1>
+            <p class="gameIntro">Mime une expression. Le premier joueur à atteindre l’objectif gagne.</p>
+            <section class="setupSection" aria-labelledby="pointsTitle">
+                <h2 id="pointsTitle">Objectif de points</h2>
+                <div class="pointsControl">
+                    <button id="minusPointsButton" class="circleButton" aria-label="Retirer un point">−</button>
+                    <input id="nbPoints" type="number" min="1" max="100" value="5" aria-label="Nombre de points pour gagner">
+                    <button id="plusPointsButton" class="circleButton" aria-label="Ajouter un point">+</button>
+                </div>
+                <p class="setupHint">Points à atteindre pour remporter la partie</p>
+            </section>
+            <section class="setupSection" aria-labelledby="playersTitle">
+                <div class="setupHeading"><h2 id="playersTitle">Les joueurs</h2><span id="playerCount">2 joueurs</span></div>
+                <div id="playersForm"></div>
+                <button id="addPlayerButton" type="button"><i class="fa-solid fa-plus" aria-hidden="true"></i> Ajouter un joueur</button>
+            </section>
+            <button id="startButton" class="startGameButton" type="button">C’est parti <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
         </div>
         <div id="gameWindow">
-            <div id="timer">120</div>
-            <div id="gameExpressionContainer"></div>
+            <p class="gameEyebrow">À TOI DE MIMER</p>
             <div id="currentPlayerContainer"></div>
+            <h1 id="gameExpressionContainer"></h1>
+            <button id="skipExpressionButton" type="button">Autre expression <i class="fa-solid fa-forward" aria-hidden="true"></i></button>
+            <p id="scoreHint">Qui a trouvé ? Clique sur son nom pour lui donner un point.</p>
             <div id="playersContainer"></div>
+            <button id="newGameButton" type="button" hidden>Nouvelle partie</button>
         </div>
-
     </div>
 
     <section id="libraryContainer" class="container" aria-labelledby="libraryTitle" hidden>
@@ -93,9 +94,8 @@
             <h1 id="libraryTitle">Les expressions</h1>
             <p id="dataStatus" role="status"></p>
             <input id="expressionSearch" type="search" placeholder="Rechercher une expression…" aria-label="Rechercher une expression">
-            <div id="editorControls" hidden>
+            <div id="personalControls" hidden>
                 <form id="expressionForm"><input id="expressionInput" type="text" maxlength="200" required placeholder="Nouvelle expression" aria-label="Texte de l’expression"><button id="saveExpression" type="submit">Ajouter</button><button id="cancelEdit" type="button" hidden>Annuler</button></form>
-                <button id="importExpressions" type="button">Importer les 34 expressions d’origine</button>
             </div>
             <p id="libraryMessage" role="status" aria-live="polite"></p>
             <p id="expressionCount"></p>
